@@ -33,3 +33,44 @@ const lf=document.querySelector('#loginForm');if(lf)lf.addEventListener('submit'
 const ff=document.querySelector('#forgotForm');if(ff)ff.addEventListener('submit',async e=>{e.preventDefault();const f=new FormData(ff),email=String(f.get('email')).trim().toLowerCase(),password=String(f.get('password')),users=readAccounts(),account=users.find(x=>x.email===email);if(!account){toast('No account found for that email.');return}if(password.length<8){toast('Password must be at least 8 characters.');return}account.passwordHash=await hashPassword(password);localStorage.setItem('unifindAccounts',JSON.stringify(users));toast('Demo password reset. Please login.');location.hash='#login'});
 const mu=document.querySelector('#matchUpload');if(mu)mu.addEventListener('change',()=>{if(mu.files[0])toast('Photo selected. Click Find image matches to view demo results.')});const rm=document.querySelector('#runMatch');if(rm)rm.addEventListener('click',()=>toast('Showing visually similar demo items below.'))}
 window.addEventListener('hashchange',render);render();
+
+
+/* Sticky navbar fallback for UniFind */
+document.addEventListener('DOMContentLoaded', function () {
+  const candidates = [
+    document.querySelector('header'),
+    document.querySelector('.topbar'),
+    document.querySelector('.navbar'),
+    document.querySelector('.site-header'),
+    document.querySelector('.main-header'),
+    document.querySelector('nav')
+  ].filter(Boolean);
+
+  // Prefer the element containing the UniFind logo and main navigation links.
+  const nav = candidates.find(el =>
+    /UniFind/i.test(el.textContent || '') &&
+    /Home/i.test(el.textContent || '') &&
+    /Lost\s*&?\s*Found/i.test(el.textContent || '')
+  ) || candidates[0];
+
+  if (nav) {
+    nav.style.position = 'sticky';
+    nav.style.top = '0';
+    nav.style.zIndex = '10000';
+    nav.style.width = '100%';
+    nav.style.backgroundColor = '#FFFFFF';
+  }
+});
+
+
+/* Keep the content start aligned with the fixed navbar's real height */
+document.addEventListener('DOMContentLoaded', function () {
+  const nav = document.querySelector('.topbar');
+  if (!nav) return;
+  function syncNavHeight() {
+    const h = Math.ceil(nav.getBoundingClientRect().height);
+    document.documentElement.style.setProperty('--unifind-nav-height', h + 'px');
+  }
+  syncNavHeight();
+  window.addEventListener('resize', syncNavHeight);
+});
