@@ -975,3 +975,397 @@ header, .topbar, .navbar, .site-header, .main-header, .navigation {
 body {
   padding-top: var(--unifind-nav-height, 82px) !important;
 }
+
+
+/* UI/UX refinement – clearer typography, balanced spacing and improved forms */
+:root{--ink:#26372d;--muted:#65766a;--accent:#1f6845;--line:#c8d8c9}
+body{font-size:15px;color:#26372d;background:#edf3eb}
+.topbar nav{font-size:13px;font-weight:650}
+.navright{font-size:13px}
+.hero{padding:30px 0 25px;background:linear-gradient(125deg,#dcebdc 0%,#e9f1e5 55%,#d2e4d2 100%)}
+.hero h1{font-size:clamp(35px,4vw,52px);color:#203b2b}
+.hero p{font-size:16px;line-height:1.65;color:#53675a}
+.eyebrow{font-size:11px;letter-spacing:1.6px}
+.section{padding:17px 0}
+.sectionhead{margin-bottom:12px}
+.sectionhead h2,.pagehead h1{font-size:28px;color:#263d2e}
+.pagehead{padding:20px 0 10px}
+.pagehead p{font-size:15px}
+.card h3{font-size:15px;color:#293d30}
+.meta{font-size:13px}
+.cardbottom{font-size:12px}
+.badge{font-size:11px}
+.textlink,.mini-btn{font-size:13px}
+.hint{font-size:12px}
+.callout{padding:18px 20px}
+.callout h3{font-size:17px}
+.callout p{font-size:14px;line-height:1.55}
+.how-intro{text-align:center;max-width:680px;margin:0 auto 16px}
+.how-intro h2{font-size:29px;margin:5px 0}
+.how-intro p{margin:0;color:var(--muted);font-size:15px}
+.how-steps{gap:13px;margin-top:20px}
+.how-card{position:relative;min-height:180px;padding:18px 15px 16px;background:linear-gradient(155deg,#f9fbf7,#e8f1e6);border:1px solid #d3e0d2;border-radius:14px;box-shadow:0 5px 15px rgba(36,73,45,.07)}
+.how-icon{width:42px;height:42px;border-radius:12px;display:grid;place-items:center;background:#d8ead8;color:#205d3d;font-size:23px;font-weight:800;margin-bottom:13px}
+.how-number{position:absolute;right:14px;top:14px;color:#91a994;font-size:12px;font-weight:800;letter-spacing:1px}
+.how-card h3{font-size:15px;margin:0 0 7px;color:#274331}
+.how-card p{font-size:13px;line-height:1.5;color:#65766a;margin:0}
+.ai-callout{margin-top:17px;background:linear-gradient(110deg,#d7e9d7,#e9f1e5);border:1px solid #c8ddc9}
+.ai-callout h3{margin:4px 0;font-size:19px}
+.ai-callout p{max-width:650px}
+.location-meta{display:flex;align-items:center;gap:5px}
+.location-icon{font-size:13px;line-height:1}
+.formlayout{gap:18px;padding-bottom:22px}
+.panel{padding:20px;background:#fbfcf9;border-radius:13px;box-shadow:0 5px 18px rgba(34,65,42,.05)}
+.panel h2{font-size:19px}
+.formrow{margin-bottom:13px}
+.formrow label{font-size:14px;color:#314638}
+.formrow input,.formrow select,.formrow textarea,.searchbox input,.filters input,.filters select{font-size:15px;padding:12px 13px;border-color:#cbd9cc;background:#fff}
+.formrow input,.formrow select{min-height:45px}
+.formrow textarea{min-height:105px}
+.radiochoices label{font-size:14px}
+.uploadbox{padding:18px;background:#f4f8f2;border:1.5px dashed #9ebaa2;color:#4e6754}
+.upload-symbol{display:grid;place-items:center;width:35px;height:35px;margin:0 auto 7px;border-radius:50%;background:#dcebdd;color:#205d3d;font-size:25px}
+.uploadbox strong,.uploadbox small{display:block}
+.uploadbox small{margin-top:4px;color:#718273}
+.uploadbox input{margin:12px auto 0;max-width:100%}
+.preview-row{display:flex;align-items:center;gap:12px;margin-top:10px}
+#photoPreview{max-width:145px;max-height:110px;object-fit:cover;border-radius:9px;border:1px solid #d4e0d4}
+.remove-photo{border:1px solid #e2b9b5;background:#fff5f4;color:#a43d35;border-radius:7px;padding:8px 12px;font-weight:650}
+.optional-label{font-size:12px;font-weight:500;color:#748478}
+.auth-container .auth-panel{padding:24px;max-width:100%}
+.auth-panel .formrow{max-width:390px}
+.auth-panel input{max-width:390px}
+.auth-panel h1{color:#263d2e}
+.notice{font-size:14px;color:#405b48;line-height:1.55}
+.notice h3{font-size:15px}
+footer{padding-top:23px;padding-bottom:23px;font-size:12px;line-height:1.6}
+footer b{font-size:15px}
+footer p{font-size:13px}
+.footlinks{font-size:12px}
+#toast{font-size:14px}
+@media(max-width:850px){.how-steps{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:600px){
+ .hero{padding:23px 0 20px}.hero h1{font-size:34px}.hero p{font-size:15px}
+ .section{padding:14px 0}.sectionhead h2,.pagehead h1{font-size:24px}
+ .how-steps{grid-template-columns:1fr 1fr}.how-card{min-height:165px;padding:14px}
+ .auth-container{padding-top:22px!important}.auth-container .auth-panel{padding:18px}
+ footer{padding:20px 17px;gap:13px}
+}
+
+.match-layout{display:grid;grid-template-columns:minmax(0,1.6fr) minmax(240px,1fr);gap:16px;align-items:stretch;margin:10px 0 25px}
+.match-upload-panel{padding:22px}
+.match-heading{display:flex;align-items:center;gap:12px;margin-bottom:15px}
+.match-heading .how-icon{margin:0;flex:0 0 42px}
+.match-heading h2{font-size:19px;margin:0 0 3px}
+.match-heading p{margin:0;color:var(--muted);font-size:13px}
+.match-drop{min-height:155px;border:1.5px dashed #9ebaa2;background:#f4f8f2;border-radius:12px;display:flex;flex-direction:column;align-items:center;justify-content:center;cursor:pointer;padding:15px;text-align:center}
+.match-drop strong{color:#2c4935}.match-drop small{color:#718273;margin-top:4px}
+.match-drop input{margin-top:12px;max-width:100%;font-size:13px}
+.match-upload-panel>.btn{margin-top:14px}
+.match-note{position:relative;overflow:hidden;margin:0;padding:22px;background:linear-gradient(145deg,#e0ecdf,#d2e4d2)}
+.match-note p{max-width:290px}
+.match-note-icon{font-size:75px;line-height:1;color:#8eae92;opacity:.4;position:absolute;right:15px;bottom:2px}
+.match-results-head{align-items:end;margin-top:18px}
+.match-results-head h2{font-size:24px;margin:3px 0 0}
+.match-disclaimer{margin:12px 0 24px}
+@media(max-width:700px){.match-layout{grid-template-columns:1fr}.match-note{min-height:140px}}
+
+
+/* Final requested refinements: tighter home spacing, full item photos, narrower auth panels */
+.hero{
+  padding:14px 0 10px !important;
+}
+.hero .searchbox{
+  max-width:900px !important;
+  margin-top:8px !important;
+}
+.hero .hint{margin-top:4px !important}
+.section.container{padding-top:9px !important;padding-bottom:10px !important}
+.sectionhead{margin-bottom:8px !important}
+
+/* Show the complete uploaded item photo without cropping its top or bottom */
+.card .item-photo,
+.activityitem img{
+  object-fit:contain !important;
+  height:190px !important;
+  width:100%;
+  background:#202b23 !important;
+  padding:5px;
+}
+.activityitem img{
+  width:88px !important;
+  height:76px !important;
+  padding:2px;
+  flex:0 0 88px;
+}
+.detailimage{
+  object-fit:contain !important;
+  background:#202b23 !important;
+}
+
+/* Reduce the width of Login and Create Account cards */
+.auth-container{
+  max-width:430px !important;
+  padding-left:24px;
+  padding-right:24px;
+}
+.auth-container .auth-panel{
+  width:100% !important;
+  max-width:100% !important;
+  padding:20px !important;
+}
+.auth-panel .formrow,
+.auth-panel input{
+  max-width:100% !important;
+}
+.auth-panel .formrow input{
+  width:100% !important;
+  min-height:42px;
+}
+.auth-panel h1{font-size:25px !important;line-height:1.25}
+.auth-panel .meta{line-height:1.5}
+@media(max-width:600px){
+  .hero{padding:12px 0 9px !important}
+  .section.container{padding-top:8px !important}
+  .card .item-photo{height:155px !important}
+  .auth-container{max-width:100% !important;padding-left:18px;padding-right:18px}
+  .auth-container .auth-panel{padding:17px !important}
+}
+
+
+/* Latest visual refinements requested:
+   - Replace the dark image letterboxing with a soft blurred photo backdrop.
+   - Make the home search bar fill its available width with clean spacing.
+*/
+.card .item-visual{
+  position:relative;
+  isolation:isolate;
+  height:190px;
+  width:100%;
+  overflow:hidden;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:#e9f0ec;
+}
+.card .item-visual::before{
+  content:"";
+  position:absolute;
+  inset:-14px;
+  z-index:-1;
+  background-image:var(--item-bg);
+  background-position:center;
+  background-size:cover;
+  filter:blur(16px);
+  opacity:.42;
+  transform:scale(1.08);
+}
+.card .item-visual::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  z-index:-1;
+  background:linear-gradient(135deg,rgba(239,247,243,.38),rgba(224,237,231,.52));
+}
+.card .item-visual .item-photo{
+  display:block;
+  width:100%;
+  height:100% !important;
+  max-width:100%;
+  object-fit:contain !important;
+  padding:7px !important;
+  background:transparent !important;
+  position:relative;
+  z-index:1;
+}
+.hero .searchbox{
+  display:flex;
+  align-items:stretch;
+  width:100% !important;
+  max-width:100% !important;
+  gap:8px !important;
+  margin:10px 0 0 !important;
+  padding:0 !important;
+  border:0 !important;
+  outline:0 !important;
+  box-shadow:none !important;
+  background:transparent !important;
+  border-radius:0 !important;
+}
+.hero .searchbox input{
+  flex:1 1 auto;
+  width:0;
+  min-width:0;
+  height:48px;
+  padding:0 16px !important;
+  border:1px solid #c9dcd4 !important;
+  border-radius:9px !important;
+  background:#fff !important;
+  color:#293431 !important;
+  box-shadow:0 2px 7px rgba(25,70,58,.07) !important;
+}
+.hero .searchbox input:focus{
+  border-color:#15947e !important;
+  box-shadow:0 0 0 3px rgba(21,148,126,.12) !important;
+  outline:none !important;
+}
+.hero .searchbox .btn{
+  flex:0 0 112px;
+  min-width:112px;
+  height:48px;
+  margin:0 !important;
+  padding:0 18px !important;
+  border-radius:9px !important;
+  box-shadow:0 2px 6px rgba(12,91,76,.15) !important;
+}
+.hero .hint{margin:5px 0 0 !important}
+@media(max-width:600px){
+  .card .item-visual{height:155px}
+  .hero .searchbox{gap:7px !important}
+  .hero .searchbox .btn{flex-basis:88px;min-width:88px;padding:0 10px !important}
+}
+
+/* Home hero: balanced two-column layout with a purposeful feature illustration. */
+.hero .hero-layout{
+  display:grid;
+  grid-template-columns:minmax(0,1.12fr) minmax(300px,.88fr);
+  align-items:center;
+  gap:clamp(24px,5vw,72px);
+}
+.hero-copy{min-width:0;max-width:660px}
+.hero-copy .searchbox{max-width:100%!important;width:100%!important}
+.hero-copy .searchbox input{min-width:0}
+.hero-side{
+  min-height:255px;position:relative;display:flex;align-items:center;justify-content:center;
+  border:1px solid rgba(255,255,255,.23);border-radius:24px;overflow:hidden;
+  background:radial-gradient(circle at 50% 48%,rgba(255,255,255,.18),transparent 56%),linear-gradient(145deg,rgba(255,255,255,.10),rgba(0,76,65,.10));
+}
+.hero-side:before,.hero-side:after{content:"";position:absolute;border:1px solid rgba(255,255,255,.22);border-radius:50%;width:225px;height:225px}
+.hero-side:after{width:285px;height:285px;border-style:dashed;opacity:.55}
+.hero-orbit{position:absolute;border-radius:50%;background:rgba(255,255,255,.13);filter:blur(1px)}
+.orbit-one{width:90px;height:90px;top:22px;right:40px}.orbit-two{width:55px;height:55px;bottom:20px;left:42px}
+.hero-feature-main{position:relative;z-index:2;display:flex;align-items:center;gap:14px;padding:19px 23px;border-radius:16px;background:#fff;box-shadow:0 14px 35px rgba(0,55,48,.18);min-width:245px}
+.hero-feature-icon{width:48px;height:48px;border-radius:14px;display:grid;place-items:center;background:#e1f4ee;color:#087f6b;font-size:30px;font-weight:700}
+.hero-feature-main strong,.hero-feature-chip b{display:block;color:#173e36;font-size:15px}
+.hero-feature-main small,.hero-feature-chip small{display:block;color:#71817b;font-size:11px;margin-top:3px}
+.hero-feature-chip{position:absolute;z-index:3;display:flex;align-items:center;gap:9px;padding:10px 13px;border:1px solid rgba(255,255,255,.65);border-radius:12px;background:rgba(255,255,255,.94);box-shadow:0 8px 22px rgba(0,55,48,.12)}
+.hero-feature-chip>span{font-size:20px}.hero-feature-chip b{font-size:11px}.hero-feature-chip small{font-size:9px}
+.chip-top{top:24px;left:14px}.chip-bottom{bottom:22px;right:13px}
+.hero-mini-label{position:absolute;bottom:8px;left:50%;transform:translateX(-50%);font-size:9px;letter-spacing:2px;font-weight:800;color:rgba(255,255,255,.75);white-space:nowrap}
+.hero-mini-label i{font-style:normal;margin:0 7px;color:#d9fff3}
+@media(max-width:850px){.hero .hero-layout{grid-template-columns:minmax(0,1fr) minmax(230px,.8fr);gap:22px}.hero-side{min-height:225px}.hero-feature-main{min-width:210px;padding:14px}.chip-top{left:8px}.chip-bottom{right:8px}}
+@media(max-width:650px){.hero .hero-layout{grid-template-columns:1fr;gap:18px}.hero-copy{max-width:none}.hero-side{min-height:190px}.hero-copy .searchbox{max-width:100%!important}.hero-feature-main{min-width:220px}.chip-top{top:10px}.chip-bottom{bottom:10px}}
+
+
+/* Hero feature chips: improve white-text contrast and add subtle floating motion.
+   The existing illustration layout, sizes and colours remain otherwise unchanged. */
+.hero-feature-chip{
+  background:rgba(5,91,78,.88) !important;
+  border:1px solid rgba(255,255,255,.42) !important;
+  box-shadow:0 10px 24px rgba(0,48,41,.20), inset 0 1px 0 rgba(255,255,255,.12) !important;
+  backdrop-filter:blur(8px);
+  -webkit-backdrop-filter:blur(8px);
+  animation:unifindChipFloat 4.8s ease-in-out infinite;
+  will-change:transform;
+}
+.hero-feature-chip b,
+.hero-feature-chip small{
+  color:#fff !important;
+}
+.hero-feature-chip small{opacity:.92;font-size:10px !important;line-height:1.35}
+.hero-feature-chip>span{color:#fff}
+.hero-feature-chip.chip-bottom{animation-delay:-2.4s}
+@keyframes unifindChipFloat{
+  0%,100%{transform:translateY(0)}
+  50%{transform:translateY(-7px)}
+}
+@media(prefers-reduced-motion:reduce){
+  .hero-feature-chip{animation:none !important;will-change:auto}
+}
+
+/* Lost & Found browse search: clean, compact and aligned with the UniFind theme. */
+#app > section.container > #browseSearch{
+  width:min(100%, 760px) !important;
+  max-width:760px !important;
+  display:flex !important;
+  align-items:stretch !important;
+  gap:10px !important;
+  margin:14px 0 12px !important;
+  padding:0 !important;
+  border:0 !important;
+  border-radius:0 !important;
+  background:transparent !important;
+  box-shadow:none !important;
+}
+#browseSearch input{
+  flex:1 1 auto !important;
+  width:0 !important;
+  min-width:0 !important;
+  height:54px !important;
+  padding:0 18px !important;
+  border:1px solid #c8ddd5 !important;
+  border-radius:11px !important;
+  background:#fff !important;
+  color:#263d35 !important;
+  font-size:16px !important;
+  box-shadow:0 3px 12px rgba(20,75,61,.06) !important;
+}
+#browseSearch input::placeholder{color:#81938c;opacity:1}
+#browseSearch input:focus{border-color:#0c9b83 !important;box-shadow:0 0 0 3px rgba(12,155,131,.12) !important}
+#browseSearch .btn{
+  flex:0 0 112px !important;
+  min-width:112px !important;
+  height:54px !important;
+  margin:0 !important;
+  border:1px solid #078c78 !important;
+  border-radius:11px !important;
+  background:linear-gradient(135deg,#0aa88e,#087d70) !important;
+  color:#fff !important;
+  font-size:15px !important;
+  font-weight:750 !important;
+  box-shadow:0 3px 9px rgba(8,125,112,.16) !important;
+}
+#browseSearch .btn:hover{filter:brightness(1.04);transform:translateY(-1px)}
+.match-tag{
+  display:inline-flex;align-items:center;width:max-content;max-width:100%;
+  margin-top:9px;padding:6px 10px;border-radius:7px;
+  background:#e4f4ee;color:#087a67;border:1px solid #c5e6da;
+  font-size:11px;font-weight:750;letter-spacing:.1px;
+}
+.matchscore{display:none !important}
+@media(max-width:600px){
+  #app > section.container > #browseSearch{gap:7px !important}
+  #browseSearch input{height:48px !important;padding:0 12px !important;font-size:14px !important}
+  #browseSearch .btn{flex-basis:88px !important;min-width:88px !important;height:48px !important;padding:0 10px !important}
+}
+
+/* Hero illustration polish: keep the centre feature card clean white and gently animate the background orbs. */
+.hero-feature-main{
+  background:#fff !important;
+  border:1px solid rgba(255,255,255,.92);
+}
+.hero-orbit{
+  animation:unifindOrbFloat 7s ease-in-out infinite;
+  transform-origin:center;
+  will-change:transform,opacity;
+}
+.hero-orbit.orbit-two{
+  animation:unifindOrbFloat 8.5s ease-in-out -3.5s infinite;
+}
+.hero-side:before{
+  animation:unifindRingPulse 9s ease-in-out infinite;
+}
+.hero-side:after{
+  animation:unifindRingPulse 12s ease-in-out -4s infinite;
+}
+@keyframes unifindOrbFloat{
+  0%,100%{transform:translate3d(0,0,0) scale(1);opacity:.72}
+  50%{transform:translate3d(-12px,9px,0) scale(1.10);opacity:1}
+}
+@keyframes unifindRingPulse{
+  0%,100%{transform:scale(1);opacity:.48}
+  50%{transform:scale(1.055);opacity:.78}
+}
+@media(prefers-reduced-motion:reduce){
+  .hero-orbit,.hero-side:before,.hero-side:after{animation:none !important;will-change:auto}
+}
